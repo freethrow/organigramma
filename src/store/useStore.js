@@ -83,7 +83,7 @@ const useStore = create(
       }),
 
       loadExistingAreas: () => set(() => {
-        const existingAreas = ['Dragan', 'Mirjana', 'Marko', 'Aleksandar', 'Tamara', 'Radmila']
+        const existingAreas = ['Dragan', 'Mirjana', 'Marko', 'Aleksandar', 'Extra1', 'Extra2']
 
         const newAreas = existingAreas.map((name, index) => ({
           id: Date.now() + index,
