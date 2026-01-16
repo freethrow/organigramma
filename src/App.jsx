@@ -206,7 +206,7 @@ function App() {
       </nav>
 
       {/* Main Content */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden min-h-0">
         {/* Left Section - Draggable Items */}
         <div className="w-1/4 bg-white border-r border-gray-200 p-4 flex flex-col overflow-hidden">
           <h2 className="text-lg font-bold mb-3 text-gray-800">Settori/attivita'</h2>
@@ -239,6 +239,13 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 flex-shrink-0">
+        <div className="px-4 py-2 text-center">
+          <p className="text-xs text-gray-400">built by freethrow 2026</p>
+        </div>
+      </footer>
 
       {/* Modals */}
       <Modal isOpen={showItemModal} onClose={() => setShowItemModal(false)}>
