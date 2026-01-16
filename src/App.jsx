@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FiPlus, FiUser, FiDownload, FiUsers, FiPrinter, FiTrash2 } from 'react-icons/fi'
 import Modal from './components/Modal'
 import DraggableItem from './components/DraggableItem'
 import DropArea from './components/DropArea'
@@ -152,47 +153,53 @@ function App() {
           <div className="flex gap-1">
             <button
               onClick={() => setShowItemModal(true)}
-              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors flex items-center gap-1"
               title="Aggiungi settore / attivita'"
             >
-              + Settore
+              <FiPlus size={16} />
+              <span>Settore</span>
             </button>
             <button
               onClick={() => setShowAreaModal(true)}
-              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors flex items-center gap-1"
               title="Aggiungi impiegato"
             >
-              + Impiegato
+              <FiUser size={16} />
+              <span>Impiegato</span>
             </button>
             <div className="w-px bg-gray-200 mx-1"></div>
             <button
               onClick={handleUseExisting}
-              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors flex items-center gap-1"
               title="Utilizza settori esistenti"
             >
-              Carica Settori
+              <FiDownload size={16} />
+              <span>Carica Settori</span>
             </button>
             <button
               onClick={handleUseExistingAreas}
-              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors flex items-center gap-1"
               title="Utilizza impiegati esistenti"
             >
-              Carica Impiegati
+              <FiUsers size={16} />
+              <span>Carica Impiegati</span>
             </button>
             <div className="w-px bg-gray-200 mx-1"></div>
             <button
               onClick={handlePrintOrganigramma}
-              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors flex items-center gap-1"
               title="Stampa organigramma"
             >
-              📄 Stampa
+              <FiPrinter size={16} />
+              <span>Stampa</span>
             </button>
             <button
               onClick={handleReset}
-              className="px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded transition-colors"
+              className="px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded transition-colors flex items-center gap-1"
               title="Reset tutti i dati"
             >
-              🗑️ Reset
+              <FiTrash2 size={16} />
+              <span>Reset</span>
             </button>
           </div>
         </div>
