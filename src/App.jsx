@@ -191,9 +191,10 @@ function App() {
         <div className="w-1/4 bg-white border-r border-gray-200 p-4 flex flex-col overflow-hidden">
           <h2 className="text-lg font-bold mb-3 text-gray-800">Settori/attivita'</h2>
           <div className="flex-1 overflow-y-auto space-y-2">
-            {items.map(item => (
-              <DraggableItem key={item.id} item={item} />
-            ))}
+            {items.map(item => {
+              const isUsed = areas.some(area => area.items.some(i => i.id === item.id))
+              return <DraggableItem key={item.id} item={item} isUsed={isUsed} />
+            })}
             {items.length === 0 && (
               <p className="text-gray-400 text-sm text-center py-4">No items yet. Add one using the button above.</p>
             )}

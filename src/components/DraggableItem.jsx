@@ -1,4 +1,4 @@
-function DraggableItem({ item }) {
+function DraggableItem({ item, isUsed }) {
   const handleDragStart = (e) => {
     e.dataTransfer.setData('itemId', item.id.toString())
   }
@@ -9,7 +9,9 @@ function DraggableItem({ item }) {
       onDragStart={handleDragStart}
       className="px-3 py-2 bg-blue-100 border border-blue-300 rounded-lg cursor-move hover:bg-blue-200 transition-colors"
     >
-      <span className="text-gray-800 text-sm font-medium">{item.name}</span>
+      <span className={`text-gray-800 text-sm font-medium ${isUsed ? 'line-through opacity-60' : ''}`}>
+        {item.name}
+      </span>
     </div>
   )
 }
