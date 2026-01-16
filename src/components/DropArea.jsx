@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function DropArea({ area, onDrop, onRemoveItem }) {
+function DropArea({ area, onDrop, onRemoveItem, onRemoveArea }) {
   const [isDragOver, setIsDragOver] = useState(false)
 
   const handleDragOver = (e) => {
@@ -24,12 +24,21 @@ function DropArea({ area, onDrop, onRemoveItem }) {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
-      className={`border-2 border-dashed rounded-lg p-3 flex flex-col overflow-hidden transition-colors ${isDragOver
+      className={`border-2 border-dashed rounded-lg p-3 flex flex-col overflow-hidden transition-colors relative ${isDragOver
           ? 'border-green-500 bg-green-50'
           : 'border-gray-300 bg-white'
         }`}
     >
-      <h3 className="text-base font-semibold mb-2 text-gray-700">{area.name}</h3>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-base font-semibold text-gray-700">{area.name}</h3>
+        <button
+          onClick={() => onRemoveArea(area.id)}
+          className="text-gray-400 hover:text-red-600 transition-colors font-bold text-lg leading-none"
+          title="Delete area"
+        >
+          ×
+        </button>
+      </div>
       <div className="flex-1 flex flex-wrap gap-1.5 content-start overflow-y-auto">
         {area.items.map(item => (
           <div

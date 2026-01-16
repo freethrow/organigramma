@@ -12,6 +12,7 @@ function App() {
   const addArea = useStore((state) => state.addArea)
   const dropItemToArea = useStore((state) => state.dropItemToArea)
   const removeItemFromArea = useStore((state) => state.removeItemFromArea)
+  const removeArea = useStore((state) => state.removeArea)
   const loadExistingItems = useStore((state) => state.loadExistingItems)
   const loadExistingAreas = useStore((state) => state.loadExistingAreas)
   const resetStore = useStore((state) => state.resetStore)
@@ -45,6 +46,10 @@ function App() {
 
   const handleRemoveFromArea = (areaId, itemId) => {
     removeItemFromArea(areaId, itemId)
+  }
+
+  const handleRemoveArea = (areaId) => {
+    removeArea(areaId)
   }
 
   const handleUseExisting = () => {
@@ -231,6 +236,7 @@ function App() {
                 area={area}
                 onDrop={handleDrop}
                 onRemoveItem={handleRemoveFromArea}
+                onRemoveArea={handleRemoveArea}
               />
             ))}
             {areas.length === 0 && (

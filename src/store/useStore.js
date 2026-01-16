@@ -36,6 +36,10 @@ const useStore = create(
         })
       })),
 
+      removeArea: (areaId) => set((state) => ({
+        areas: state.areas.filter(area => area.id !== areaId)
+      })),
+
       loadExistingItems: () => set(() => {
         const existingItems = [
           'macchine e attrezzature per l\'agricoltura e il giardinaggio',
