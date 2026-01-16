@@ -145,45 +145,58 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-100 overflow-hidden">
-      {/* Header with Buttons */}
-      <div className="bg-white border-b border-gray-200 p-2 flex gap-2 justify-center flex-shrink-0 flex-wrap">
-        <button
-          onClick={() => setShowItemModal(true)}
-          className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Aggiungi settore / attivita'
-        </button>
-        <button
-          onClick={() => setShowAreaModal(true)}
-          className="px-3 py-1.5 text-sm bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-        >
-          Aggiungi impiegato
-        </button>
-        <button
-          onClick={handleUseExisting}
-          className="px-3 py-1.5 text-sm bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-        >
-          Utilizza settori esistenti
-        </button>
-        <button
-          onClick={handleUseExistingAreas}
-          className="px-3 py-1.5 text-sm bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
-        >
-          Utilizza impiegati esistenti
-        </button>
-        <button
-          onClick={handlePrintOrganigramma}
-          className="px-3 py-1.5 text-sm bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
-        >
-          Organigramma
-        </button>
-        <button
-          onClick={handleReset}
-          className="px-3 py-1.5 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-        >
-          Reset
-        </button>
-      </div>
+      {/* Minimalistic Navbar */}
+      <nav className="bg-white shadow-sm flex-shrink-0">
+        <div className="flex items-center justify-between px-4 py-3">
+          <h1 className="text-2xl font-light text-gray-700 tracking-wide">FreeOrganigramma</h1>
+          <div className="flex gap-1">
+            <button
+              onClick={() => setShowItemModal(true)}
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              title="Aggiungi settore / attivita'"
+            >
+              + Settore
+            </button>
+            <button
+              onClick={() => setShowAreaModal(true)}
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              title="Aggiungi impiegato"
+            >
+              + Impiegato
+            </button>
+            <div className="w-px bg-gray-200 mx-1"></div>
+            <button
+              onClick={handleUseExisting}
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              title="Utilizza settori esistenti"
+            >
+              Carica Settori
+            </button>
+            <button
+              onClick={handleUseExistingAreas}
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              title="Utilizza impiegati esistenti"
+            >
+              Carica Impiegati
+            </button>
+            <div className="w-px bg-gray-200 mx-1"></div>
+            <button
+              onClick={handlePrintOrganigramma}
+              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+              title="Stampa organigramma"
+            >
+              📄 Stampa
+            </button>
+            <button
+              onClick={handleReset}
+              className="px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded transition-colors"
+              title="Reset tutti i dati"
+            >
+              🗑️ Reset
+            </button>
+          </div>
+        </div>
+      </nav>
 
       {/* Main Content */}
       <div className="flex flex-1 overflow-hidden">
