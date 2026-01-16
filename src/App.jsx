@@ -255,13 +255,13 @@ function App() {
 
       {/* Modals */}
       <Modal isOpen={showItemModal} onClose={() => setShowItemModal(false)}>
-        <h3 className="text-xl font-bold mb-4 text-gray-800">Add New Item</h3>
+        <h3 className="text-xl font-bold mb-4 text-gray-800">Aggiungi settore</h3>
         <form onSubmit={handleAddItem}>
           <input
             type="text"
             value={newItemName}
             onChange={(e) => setNewItemName(e.target.value)}
-            placeholder="Enter item name"
+            placeholder="inserisci settore"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
             autoFocus
           />
@@ -284,13 +284,13 @@ function App() {
       </Modal>
 
       <Modal isOpen={showAreaModal} onClose={() => setShowAreaModal(false)}>
-        <h3 className="text-xl font-bold mb-4 text-gray-800">Add New Area</h3>
+        <h3 className="text-xl font-bold mb-4 text-gray-800">Aggiungi persona</h3>
         <form onSubmit={handleAddArea}>
           <input
             type="text"
             value={newAreaName}
             onChange={(e) => setNewAreaName(e.target.value)}
-            placeholder="Enter area name"
+            placeholder="inserisci persona"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 mb-4"
             autoFocus
           />
